@@ -18,7 +18,7 @@ export default function SearchBar() {
   }, []);
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="z-10 flex flex-col justify-center items-center">
       <div className="animate__animated animate__fadeInUp w-full flex justify-center mt-24 px-8 md:mt-10 md:ml-1 transition-colors duration-300">
         <div className="relative w-[750px]">
           <div className="absolute inset-y-0 left-1 flex items-center pl-3 pointer-events-none">

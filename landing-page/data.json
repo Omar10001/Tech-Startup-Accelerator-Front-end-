@@ -1,0 +1,58 @@
+{
+  "locations": [
+    {
+      "id": 77,
+      "title": "Baghdad, IQ",
+      "description": "1 Beds",
+      "price": 2.0
+    },
+    {
+      "id": 78,
+      "title": "Baghdad, IQ",
+      "description": "1 Beds",
+      "price": 9.0
+    },
+    {
+      "id": 79,
+      "title": "Baghdad, IQ",
+      "description": "1 Beds",
+      "price": 3.0
+    },
+    {
+      "id": 1,
+      "title": "Calabasas, CA",
+      "description": "1 Beds",
+      "price": 2.0
+    },
+    {
+      "id": 2,
+      "title": "Long Beach, CA",
+      "description": "2 Beds",
+      "price": 2.5
+    },
+    {
+      "id": 3,
+      "title": "Fullerton, CA",
+      "description": "3 Beds",
+      "price": 4.0
+    },
+    {
+      "id": 4,
+      "title": "Los Santos, LS",
+      "description": "6 Beds",
+      "price": 5.5
+    },
+    {
+      "id": 5,
+      "title": "Ezoria, EU",
+      "description": "1 Beds",
+      "price": 7.0
+    },
+    {
+      "id": 6,
+      "title": "Midgard, MD",
+      "description": "1 Beds",
+      "price": 1.0
+    }
+  ]
+}

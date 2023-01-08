@@ -1,0 +1,12 @@
+.respo{
+    visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+    .respo{
+        width: 1px;
+        height: 1px;
+        visibility: hidden;
+        overflow: hidden;
+    }
+}

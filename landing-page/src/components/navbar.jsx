@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import "./navbar.css";
 export default function NavBar() {
-  const [theme, setTheme] = useState("dark");
+  const [theme, setTheme] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const element = document.documentElement;
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
 
   const options = [
     {
@@ -16,6 +17,16 @@ export default function NavBar() {
     },
   ];
 
+  function onWindowMatch(){
+    if(localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches))
+    {
+      element.classList.add('dark');
+    }else{
+      element.classList.remove("dark");
+    }
+
+  }
+  onWindowMatch()
   useEffect(() => {
     switch (theme) {
       case "dark":

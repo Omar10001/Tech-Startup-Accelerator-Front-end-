@@ -38,7 +38,7 @@ export default function NavBar() {
         <img src="./src/assets/housen.png" alt="logo" />
       </div>
 
-      <div className="respo mt-2.5 mr-28 flex gap-6 text-lg font-normal  dark:text-white transition-colors duration-300 ">
+      <div className="respo mt-2.5 mr-28 flex gap-14 text-lg font-medium  dark:text-white transition-colors duration-300 ">
         <a href="">Buy a house</a>
         <a href="">Rent a house</a>
         <a href="">Mortgage</a>

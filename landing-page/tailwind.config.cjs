@@ -5,7 +5,8 @@ module.exports = {
   content: [
     "./index.html",
     "./src/App.jsx",
-    "./src/components/navbar.jsx"
+    "./src/components/navbar.jsx",
+    "./src/components/search/search.jsx"
   ],
   theme: {
     extend: {},

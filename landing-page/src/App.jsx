@@ -12,8 +12,9 @@ function App() {
       </div>
 
       <SearchBar />
+      <br />
 
-      <footer className="sticky h-fit md:h-[50px] bg-transparent md:bg-white dark:bg-[#17161B] top-[1100px] flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center w-full overflow-clip px-20 transition-colors duration-300">
+      <footer className="sticky h-fit md:h-[50px] bg-transparent md:bg-white dark:bg-[#17161B] top-[1100px] flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center w-full overflow-clip px-20 transition-colors duration-300 mt-4">
         <span className="text-[#A8A8A8] text-sm  font-medium">Housen © 2020</span>
         <div className="flex flex-col md:flex-row gap-5 text-[#A8A8A8] text-sm font-medium text-center pb-6 md:pb-0">
           <a href="">About</a>

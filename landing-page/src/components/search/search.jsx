@@ -1,7 +1,7 @@
-import './search.css'
+import "./search.css";
 export default function SearchBar() {
   return (
-    <div className="animate__animated animate__fadeInUp w-full flex justify-center mt-10 ml-1">
+    <div className="animate__animated animate__fadeInUp w-full flex justify-center mt-24 px-8 md:mt-10 md:ml-1">
       <div class="relative w-[750px]">
         <div class="absolute inset-y-0 left-1 flex items-center pl-3 pointer-events-none">
           <svg
@@ -20,18 +20,20 @@ export default function SearchBar() {
             ></path>
           </svg>
         </div>
-        <input
-          type="text"
-          class="h-[68px] block w-full pl-14 text-gray-900 customshadow border dark:border-gray-600 text-base rounded bg-gray-50 dark:bg-transparent placeholder:text-base dark:placeholder-[#A8A8A8] dark:text-white focus:outline-none"
-          placeholder="Search for address"
-          required
-        />
-        <button
-          type="submit"
-          class="text-white absolute right-3 bottom-3 bg-[#6935FD] hover:bg-[#6935FD]/70 focus:outline-none font-medium rounded-sm text-lg px-14 py-2  dark:hover:bg-[#6935FD]/70"
-        >
-          Search
-        </button>
+        <div  className="w-full h-[68px] ">
+          <input
+            type="text"
+            class="h-[68px] block w-full pl-14 text-gray-900 customshadow border dark:border-gray-600 text-base rounded bg-gray-50 dark:bg-transparent placeholder:text-base dark:placeholder-[#A8A8A8] dark:text-white focus:outline-none"
+            placeholder="Search for address"
+            required
+          />
+          <button
+            type="submit"
+            class="text-white absolute md:right-3 mt-3 md:mt-0 w-full md:w-48  md:bottom-3 bg-[#6935FD] hover:bg-[#6935FD]/70 focus:outline-none font-medium rounded-sm text-lg px-14 py-2  dark:hover:bg-[#6935FD]/70"
+          >
+            Search
+          </button>
+        </div>
       </div>
     </div>
   );

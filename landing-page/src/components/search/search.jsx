@@ -7,7 +7,7 @@ export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const searchLoc = async (title) => {
     const response = await fetch(
-      `http://localhost:3000/locations?title_like=${title}&_limit=2`
+      `http://localhost:3000/locations?title_like=${title}`
     );
     const data = await response.json();
 
@@ -57,11 +57,15 @@ export default function SearchBar() {
           </div>
         </div>
       </div>
-      <div className="mt-16 md:mt-3">
-        {location.map((loc) => (
-          <Results key={loc.id} data={loc} />
-        ))}
-      </div>
+      {location?.length > 0 ? (
+        <div className="mt-16 md:mt-3">
+          {location.map((loc) => (
+            <Results key={loc.id} data={loc} />
+          ))}
+        </div>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }

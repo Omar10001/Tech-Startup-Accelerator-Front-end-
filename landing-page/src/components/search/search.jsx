@@ -1,7 +1,7 @@
 import './search.css'
 export default function SearchBar() {
   return (
-    <div className="animate__animated animate__fadeInUp w-full flex justify-center mt-10">
+    <div className="animate__animated animate__fadeInUp w-full flex justify-center mt-10 ml-1">
       <div class="relative w-[750px]">
         <div class="absolute inset-y-0 left-1 flex items-center pl-3 pointer-events-none">
           <svg

@@ -1,6 +1,6 @@
 # Tech-Startup-Accelerator-Front-end-
 Task by COMPUTiQ
 ## Tech Used
-JSON server
-React.Js
-HTML/CSS/Tailwind CSS
+1-JSON server
+2-React.Js
+3-HTML/CSS/Tailwind CSS

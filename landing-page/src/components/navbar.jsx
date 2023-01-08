@@ -35,7 +35,7 @@ export default function NavBar() {
   return (
     <nav className="flex justify-between items-start w-full h-fit px-3 md:px-20 pt-7 ">
       <div className="md:w-36 w-20 ">
-        <img src="./src/assets/housen.png" alt="logo" />
+        <img src="https://i.ibb.co/V9ZKWv8/housen.png" alt="logo" />
       </div>
 
       <div className="respo mt-2.5 mr-28 flex gap-14 text-lg font-medium  dark:text-white transition-colors duration-300 ">

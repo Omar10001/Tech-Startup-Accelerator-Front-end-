@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App flex flex-col px-1 w-full md:min-h-screen min-h-[100%] bg-[#f8f8f8] dark:bg-[#17161B] transition-all duration-300 ">
       <NavBar />
-      <span className="animate__animated animate__fadeInDown text-4xl w-[313px] mx-auto md:w-full md:text-7xl text-black dark:text-white font text-center mt-28 font-medium">Find your ideal home</span>
-      <div className="animate__animated animate__fadeIn w-[292px] h-[170px] md:w-[825px] md:h-[76px] mx-auto mt-6">
+      <span className="mt-40 animate__animated animate__fadeInDown text-4xl w-[313px] mx-auto md:w-full md:text-7xl text-black dark:text-white font text-center font-medium">Find your ideal home</span>
+      <div className=" animate__animated animate__fadeIn w-[292px] h-[170px] md:w-[825px] md:h-[76px] mx-auto mt-6">
         <p className=" text-center font-medium text-[#616161] dark:text-white text-2xl leading-10">Search from more than 19 million of inspected appartments,  houses, cottages, villas, manors and mansions</p>
       </div>
 

@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import "./navbar.css";
+
 export default function NavBar() {
-  const [theme, setTheme] = useState("");
-  const [menuOpen, setMenuOpen] = useState(false);
+  localStorage.setItem("theme", "dark");
+  const [theme, setTheme] = useState(localStorage.getItem("theme"));
   const element = document.documentElement;
-  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)")
+  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+  const [navbar, setNavbar] = useState(false);
 
   const options = [
     {
@@ -17,16 +20,17 @@ export default function NavBar() {
     },
   ];
 
-  function onWindowMatch(){
-    if(localStorage.theme === 'dark' || (!('theme' in localStorage) && darkQuery.matches))
-    {
-      element.classList.add('dark');
-    }else{
+  function onWindowMatch() {
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) && darkQuery.matches)
+    ) {
+      element.classList.add("dark");
+    } else {
       element.classList.remove("dark");
     }
-
   }
-  onWindowMatch()
+  onWindowMatch();
   useEffect(() => {
     switch (theme) {
       case "dark":
@@ -43,61 +47,69 @@ export default function NavBar() {
     }
   }, [theme]);
 
-  return (
-    <nav className="flex justify-between items-start w-full h-fit px-3 md:px-20 pt-7 ">
-      <div className="md:w-36 w-20 ">
-        <img src="https://i.ibb.co/V9ZKWv8/housen.png" alt="logo" />
-      </div>
+  // useEffect(() => {
+  //   const themeFromLocalStorage = localStorage.getItem("theme");
+  //   setTheme(themeFromLocalStorage);
+  // }, []);
 
-      <div className="respo mt-2.5 mr-28 flex gap-14 text-lg font-medium  dark:text-white transition-colors duration-300 ">
-        <a href="">Buy a house</a>
-        <a href="">Rent a house</a>
-        <a href="">Mortgage</a>
-      </div>
-      <div className="flex gap-3">
-        {options?.map((opt) => (
-          <button
-            key={opt.text}
-            onClick={() => setTheme(opt.text)}
-            className={`text-dark  dark:text-white text-2xl md:mt-2 md:text-4xl   ${
-              theme === opt.text && "hidden transition-all duration-300"
+  return (
+    <nav className="z-10 fixed top-0 w-full bg-[#f8f8f8] dark:bg-[#17161b] shadow px-8 md:px-0">
+      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-0">
+        <div>
+          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+            <a href="" className="">
+              <img
+                src="https://i.ibb.co/V9ZKWv8/housen.png"
+                alt=""
+                className="w-32"
+              />
+            </a>
+            <div className="md:hidden">
+              <button
+                className="p-2 text-black rounded-md outline-none dark:text-white text-2xl mt-3"
+                onClick={() => setNavbar(!navbar)}
+              >
+                {navbar ? (
+                  <ion-icon name="close-outline"></ion-icon>
+                ) : (
+                  <ion-icon name="menu-outline"></ion-icon>
+                )}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            className={`flex-1 justify-self-center pb-3 mt-8 mr-0 md:mr-20 md:block md:pb-0 md:mt-0 ${
+              navbar ? "block" : "hidden"
             }`}
           >
-            <ion-icon name={opt.icon}></ion-icon>
-          </button>
-        ))}
-
-        <button
-          className="md:hidden text-2xl dark:text-white"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <ion-icon name="menu"></ion-icon>
-        </button>
-      </div>
-
-      <div
-        className={` dark:text-white flex flex-col gap-4 ${
-          menuOpen ? "" : "hidden"
-        }`}
-      >
-        <a
-          href=""
-          className="block px-1 py-1 text-base font-medium transition-all duration-150 ease-in-out"
-        >
-          Buy a house
-        </a>
-        <a
-          href=""
-          className="block px-1 py-1 text-base font-medium transition-all duration-150 ease-in-out"
-        >
-          Rent a house
-        </a>
-        <a
-          href=""
-          className="block px-1 py-2 mt-2 text-base font-medium transition-all duration-150 ease-in-out"
-        >
-          Mortgage
-        </a>
+            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              <li className="text-black dark:text-white hover:text-indigo-200">
+                <a href="">Buy a house</a>
+              </li>
+              <li className="text-black dark:text-white hover:text-indigo-200">
+                <a href="">Rent a house</a>
+              </li>
+              <li className="text-black dark:text-white hover:text-indigo-200">
+                <a href="">Contact US</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className={`md:visible ${navbar ? "visible" : "invisible"}`}>
+          {options?.map((opt) => (
+            <button
+              key={opt.text}
+              onClick={() => setTheme(opt.text)}
+              className={`text-dark text-center  dark:text-white text-2xl md:mt-2 md:text-4xl   ${
+                theme === opt.text && "hidden transition-all duration-300"
+              }`}
+            >
+              <ion-icon name={opt.icon}></ion-icon>
+            </button>
+          ))}
+        </div>
       </div>
     </nav>
   );

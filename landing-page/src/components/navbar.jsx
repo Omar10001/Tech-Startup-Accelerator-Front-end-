@@ -1,56 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import DarkMode from "./darkmode/darkmode";
+
 import "./navbar.css";
 
 export default function NavBar() {
-  localStorage.setItem("theme", "dark");
-  const [theme, setTheme] = useState(localStorage.getItem("theme"));
-  const element = document.documentElement;
-  const darkQuery = window.matchMedia("(prefers-color-scheme: dark)");
-
   const [navbar, setNavbar] = useState(false);
-
-  const options = [
-    {
-      icon: "sunny-outline",
-      text: "light",
-    },
-    {
-      icon: "moon-outline",
-      text: "dark",
-    },
-  ];
-
-  function onWindowMatch() {
-    if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) && darkQuery.matches)
-    ) {
-      element.classList.add("dark");
-    } else {
-      element.classList.remove("dark");
-    }
-  }
-  onWindowMatch();
-  useEffect(() => {
-    switch (theme) {
-      case "dark":
-        element.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-        break;
-      case "light":
-        element.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-        break;
-      default:
-        localStorage.removeItem("theme");
-        break;
-    }
-  }, [theme]);
-
-  // useEffect(() => {
-  //   const themeFromLocalStorage = localStorage.getItem("theme");
-  //   setTheme(themeFromLocalStorage);
-  // }, []);
 
   return (
     <nav className="z-10 fixed top-0 w-full bg-[#f8f8f8] dark:bg-[#17161b] shadow px-8 md:px-0 transition-all duration-300">
@@ -98,17 +52,7 @@ export default function NavBar() {
           </div>
         </div>
         <div className={`md:visible ${navbar ? "visible" : "invisible"}`}>
-          {options?.map((opt) => (
-            <button
-              key={opt.text}
-              onClick={() => setTheme(opt.text)}
-              className={`text-dark text-center  dark:text-white text-2xl md:mt-2 md:text-4xl   ${
-                theme === opt.text && "hidden transition-all duration-300"
-              }`}
-            >
-              <ion-icon name={opt.icon}></ion-icon>
-            </button>
-          ))}
+          <DarkMode />
         </div>
       </div>
     </nav>
